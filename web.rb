@@ -1,5 +1,6 @@
 require 'sinatra'
-require './api'
+require './api/api'
+require './api/v1'
 require './named_params'
 require './nasa'
 require './phile'
@@ -8,6 +9,7 @@ require './template'
 
 class Lemonade < Sinatra::Base
   use Api
+  use Api::V1
   use NamedParams
   use Nasa
   use Phile

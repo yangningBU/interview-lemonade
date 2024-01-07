@@ -1,7 +1,7 @@
 require 'json'
 
-require './api'
-require './spec_helper'
+require_relative './api'
+require_relative '../spec_helper'
 
 describe Api do
   def app
