@@ -28,6 +28,8 @@ class Api < Sinatra::Base
   private
 
   def save_data(key, value)
+    return if key.nil? || key.empty? || value.nil? || value.empty?
+    
     logger.info "Adding #{value} to #{key}..."
     DATA_IN_MEMORY[key] = [] if DATA_IN_MEMORY[key].nil?
     DATA_IN_MEMORY[key] << value
