@@ -1,10 +1,12 @@
-require 'json'
 require 'sinatra'
+require './api'
 
-before %r{/api\/?.*} do
-  content_type 'application/json'
+class Lemonade < Sinatra::Base
+  use Api
+  
+  get '/' do
+    "Success"
+  end
 end
 
-get '/api' do
-  { status: :ok }.to_json
-end
+Lemonade.start!
